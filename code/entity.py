@@ -1,11 +1,20 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import pygame
+
 
 class Entity:
-    def __init__(self):
-        self.name = None
-        self.sur = None
-        self.rect = None
+    def __init__(self, name: str, position: tuple):
+        self.name = name
+        self.surf = pygame.image.load(
+            './asset/' + name + '.png').convert_alpha()  # convert_alpha elimina transparencias
+        # e trata a imagem
+        self.rect = self.surf.get_rect(left=position[0], top=position[1])
+        # self.speed = 0
+        # self.health = ENTITY_HEALTH[self.name]
+        # self.damage = ENTITY_DAMAGE[self.name]
+        # self.score = ENTITY_SCORE[self.name]
+        # self.last_dmg = 'None'
 
     def move(self, ):
         pass
