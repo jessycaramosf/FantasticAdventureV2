@@ -4,7 +4,7 @@ C_GREEN = (0,176,0)
 C_PURPLE = (128, 0, 128)
 C_YELLOW = (255,255,128)
 C_ORANGE = (255, 128, 0)
-
+C_CYAN = (0, 128, 128)
 
 # E
 ENTITY_SPEED = {
@@ -12,7 +12,7 @@ ENTITY_SPEED = {
     'Bg1': 1,
     'Bg2': 2,
     'Bg3': 3,
-    'Bg4': 4,
+    'Bg4': 3,
     'Player1': 3,
     'Player1Shot': 1,
     'Player2': 3,
