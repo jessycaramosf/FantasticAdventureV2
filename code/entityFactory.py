@@ -16,4 +16,5 @@ class EntityFactory:
                     return list_bg
 
 
+
 pass
