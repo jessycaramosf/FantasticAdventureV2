@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 from code.background import Background
 from code.const import WIN_WIDTH, WIN_HEIGHT
+from code.enemy import Enemy
 from code.player import Player
-
+import random
 
 class EntityFactory:
     @staticmethod
@@ -17,3 +18,12 @@ class EntityFactory:
                 return list_bg
             case 'Player1':
                 return Player('Player1', (10, WIN_HEIGHT / 2))
+            case 'Enemy1':
+                return Enemy('Enemy1', (WIN_WIDTH + 10, random.randint(30, WIN_HEIGHT - 40)))
+            case 'Enemy2':
+                return Enemy('Enemy2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+            # case 'Prize1':
+            #     return Enemy('Enemy1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+            # case 'Prize2':
+            #     return Enemy('Enemy2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+            #
