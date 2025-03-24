@@ -8,7 +8,6 @@ from code.const import C_WHITE, WIN_WIDTH, C_GREEN, MENU_OPTION, C_ORANGE, C_PUR
 class Menu:
     def __init__(self, window: Surface):
         self.window = window
-        # self.name = name
         self.surf = pygame.image.load('./assets/Menu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 

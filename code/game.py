@@ -5,6 +5,7 @@ import sys
 import pygame
 
 from code.const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
+from code.credits import Credits
 from code.level import Level
 from code.menu import Menu
 
@@ -23,6 +24,9 @@ class Game:
             if menu_return == MENU_OPTION[0]:
                 level = Level(self.window, 'Level1', menu_return)
                 level_return = level.run()
+            elif menu_return == MENU_OPTION[1]:
+                credits = Credits(self.window)
+                credits_return = credits.run()
 
             elif menu_return == MENU_OPTION[2]:
                 pygame.quit()
