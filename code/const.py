@@ -31,7 +31,7 @@ ENTITY_DAMAGE = {
     'Bg3': 0,
     'Bg4': 0,
     'Player1': 1,
-    'Enemy2': 20,
+    'Enemy2': 40,
     'Prize1': 0,
     'Prize2': 0,
  }
@@ -61,7 +61,7 @@ ENTITY_HEALTH = {
 }
 
 EVENT_TIME = pygame.USEREVENT + 1
-
+EVENT_TIMEOUT = pygame.USEREVENT + 2
 
 # M
 
@@ -81,9 +81,22 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL}
 
 # S
 
-SPAWN_TIME = 6000
+SPAWN_TIME = 3000
+SCREEN_DELAY = 3000
+
+# T
+TIMEOUT_STEP = 100
+TIMEOUT_END = 30000
 
 #W
 
 WIN_WIDTH = 576
 WIN_HEIGHT = 324
+
+# SP
+
+SCORE_POS = {
+    'Title': (WIN_WIDTH / 2, 50),
+    'Label': (WIN_WIDTH / 2, 90),
+    0: (WIN_WIDTH / 2, 110),
+}

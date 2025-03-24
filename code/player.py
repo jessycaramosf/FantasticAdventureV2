@@ -13,6 +13,7 @@ class Player(Entity):
         self.score = 0
 
 
+    # Player movement
     def move(self, ):
         pressed_key = pygame.key.get_pressed()
         if pressed_key[PLAYER_KEY_UP[self.name]] and self.rect.top > 0:

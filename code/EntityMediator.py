@@ -56,7 +56,7 @@ class EntityMediator:
     def verify_health(entity_list: list[Entity]):
         entities_to_remove = []
         for ent in entity_list:
-            if ent.health <= 0 and not isinstance(ent, Player):
+            if ent.health <= 0:
                 entities_to_remove.append(ent)
         for ent in entities_to_remove:
             if ent.health <= 0:
