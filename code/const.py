@@ -31,7 +31,7 @@ ENTITY_DAMAGE = {
     'Bg3': 0,
     'Bg4': 0,
     'Player1': 1,
-    'Enemy2': 40,
+    'Enemy2': 20,
     'Prize1': 0,
     'Prize2': 0,
  }
@@ -54,7 +54,7 @@ ENTITY_HEALTH = {
     'Bg2': 999,
     'Bg3': 999,
     'Bg4': 999,
-    'Player1': 300,
+    'Player1': 200,
     'Enemy2': 1,
     'Prize1': 1,
     'Prize2': 1,
