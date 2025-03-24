@@ -20,7 +20,7 @@ class Credits:
 
             self.window.blit(source=self.surf, dest=self.rect)
             self.credit_text(50, 'Créditos', C_ORANGE, (WIN_WIDTH / 2, 60))
-            self.credit_text(18, 'Criado por: Jéssyca. C. R. Ferreira - RA: 4545764', C_YELLOW,
+            self.credit_text(20, 'Criado por: Jéssyca. C. R. Ferreira - RA: 4545764', C_YELLOW,
                            (WIN_WIDTH / 2, 120))
             self.credit_text(14, 'Musica 1: Mars uk Drill instrumental, Por: prazkhanal - '
                                  'Fonte: Freesound.org', C_YELLOW, (WIN_WIDTH / 2, 150))
@@ -29,7 +29,7 @@ class Credits:
                              (WIN_WIDTH / 2, 180))
             self.credit_text(14, 'Imagens Coletadas em CRAFTPIX.NET', C_YELLOW,
                              (WIN_WIDTH / 2, 210))
-            self.credit_text(18, 'OBRIGADA POR JOGAR!!!', C_YELLOW,
+            self.credit_text(14, 'OBRIGADA POR JOGAR!!!', C_YELLOW,
                              (WIN_WIDTH / 2, 250))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -42,7 +42,7 @@ class Credits:
             pygame.display.flip()
 
     def credit_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
-        text_font: Font = pygame.font.SysFont(name="Comic Sans", size=text_size)
+        text_font: Font = pygame.font.SysFont(name="Segoe UI Black", size=text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.window.blit(source=text_surf, dest=text_rect)
