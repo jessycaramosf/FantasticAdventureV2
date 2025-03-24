@@ -3,14 +3,14 @@ import pygame
 
 C_WHITE = (255,255,255)
 C_GREEN = (0,176,0)
-C_PURPLE = (128, 0, 128)
+C_PURPLE = (255, 0, 255)
 C_YELLOW = (255,255,128)
 C_ORANGE = (255, 128, 0)
 C_CYAN = (0, 128, 128)
 
 # E
 ENTITY_SPEED = {
-    'Bg0': 0,
+    'Bg0': 1,
     'Bg1': 1,
     'Bg2': 2,
     'Bg3': 3,
@@ -53,7 +53,7 @@ ENTITY_HEALTH = {
     'Bg2': 999,
     'Bg3': 999,
     'Bg4': 999,
-    'Player1': 300,
+    'Player1': 200,
     'Enemy2': 1,
     'Prize1': 1,
     'Prize2': 1,
@@ -65,7 +65,7 @@ EVENT_TIME = pygame.USEREVENT + 1
 # M
 
 MENU_OPTION = ('Play',
-               'Score',
+               'Créditos',
                'Exit'
                )
 

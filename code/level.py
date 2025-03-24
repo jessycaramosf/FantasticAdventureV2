@@ -10,7 +10,7 @@ from pygame.font import Font
 
 from code import entityFactory
 from code.EntityMediator import EntityMediator
-from code.const import WIN_HEIGHT, C_YELLOW, C_PURPLE, EVENT_TIME, SPAWN_TIME
+from code.const import WIN_HEIGHT, C_YELLOW, C_PURPLE, EVENT_TIME, SPAWN_TIME, C_WHITE
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 
@@ -45,10 +45,13 @@ class Level:
                 if event.type == EVENT_TIME:
                     self.entity_list.append(EntityFactory.get_entity('Enemy2'))
 
-            self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', C_PURPLE, (15, 5))
+            self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (15, 5))
             self.level_text(14, f'fps: {clock.get_fps() :.0f}', C_YELLOW, (15, WIN_HEIGHT - 35))
             self.level_text(14, f'entidades: {len(self.entity_list)}', C_YELLOW, (15, WIN_HEIGHT - 20))
-            self.level_text(14, f'Player1 - Health  | Score: ', C_PURPLE, (15, 25))
+            for ent in self.entity_list:
+                if ent.name == 'Player1':
+                    self.level_text(14, f'Player1 - Health:{ent.health} | Score:{ent.score}', C_WHITE, (15, 25))
+
 
             pygame.display.flip()
 
