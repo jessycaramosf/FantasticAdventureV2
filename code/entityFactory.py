@@ -6,6 +6,9 @@ from code.enemy import Enemy
 from code.player import Player
 import random
 
+from code.prize import Prize
+
+
 class EntityFactory:
     @staticmethod
     def get_entity(entity_name: str, position=(0,0)):
@@ -18,12 +21,10 @@ class EntityFactory:
                 return list_bg
             case 'Player1':
                 return Player('Player1', (10, WIN_HEIGHT / 2))
-            case 'Enemy1':
-                return Enemy('Enemy1', (WIN_WIDTH + 10, random.randint(30, WIN_HEIGHT - 40)))
             case 'Enemy2':
-                return Enemy('Enemy2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
-            # case 'Prize1':
-            #     return Enemy('Enemy1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
-            # case 'Prize2':
-            #     return Enemy('Enemy2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
-            #
+                return Enemy('Enemy2', (WIN_WIDTH + 10, random.randint(30, WIN_HEIGHT - 40)))
+            case 'Prize1':
+                return Prize('Prize1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+            case 'Prize2':
+                return Prize('Prize2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+

@@ -9,7 +9,8 @@ from pygame import Surface, Rect
 from pygame.font import Font
 
 from code import entityFactory
-from code.const import C_WHITE, WIN_HEIGHT, C_YELLOW, C_PURPLE, EVENT_ENEMY, SPAWN_TIME
+from code.EntityMediator import EntityMediator
+from code.const import WIN_HEIGHT, C_YELLOW, C_PURPLE, EVENT_TIME, SPAWN_TIME
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 
@@ -22,7 +23,7 @@ class Level:
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Bg0'))
         self.entity_list.append(EntityFactory.get_entity('Player1'))
-        pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME)
+        pygame.time.set_timer(EVENT_TIME, SPAWN_TIME)
 
     def run(self):
         pygame.mixer_music.load('./assets/Music2.mp3')
@@ -38,13 +39,11 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-
-                if event.type == EVENT_ENEMY:
-                    choice = random.choice(('Enemy1', 'Enemy2'))
+                if event.type == EVENT_TIME:
+                    choice = random.choice(('Prize1', 'Prize2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
-
-
-
+                if event.type == EVENT_TIME:
+                    self.entity_list.append(EntityFactory.get_entity('Enemy2'))
 
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', C_PURPLE, (15, 5))
             self.level_text(14, f'fps: {clock.get_fps() :.0f}', C_YELLOW, (15, WIN_HEIGHT - 35))
@@ -52,6 +51,10 @@ class Level:
             self.level_text(14, f'Player1 - Health  | Score: ', C_PURPLE, (15, 25))
 
             pygame.display.flip()
+
+            EntityMediator.verify_collision(entity_list=self.entity_list)
+            EntityMediator.verify_health(entity_list=self.entity_list)
+
         pass
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):

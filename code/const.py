@@ -17,12 +17,49 @@ ENTITY_SPEED = {
     'Bg4': 3,
     'Player1': 3,
     'Enemy1': 1,
-    'Enemy2': 2,
+    'Enemy2': 1,
     'Prize1': 1,
     'Prize2': 2,
     }
 
-EVENT_ENEMY = pygame.USEREVENT + 1
+
+ENTITY_DAMAGE = {
+    'Bg0': 0,
+    'Bg1': 0,
+    'Bg2': 0,
+    'Bg3': 0,
+    'Bg4': 0,
+    'Player1': 1,
+    'Enemy2': 20,
+    'Prize1': 0,
+    'Prize2': 0,
+ }
+
+ENTITY_SCORE = {
+    'Bg0': 0,
+    'Bg1': 0,
+    'Bg2': 0,
+    'Bg3': 0,
+    'Bg4': 0,
+    'Player1': 0,
+    'Enemy2': 0,
+    'Prize1': 50,
+    'Prize2': 70,
+}
+
+ENTITY_HEALTH = {
+    'Bg0': 999,
+    'Bg1': 999,
+    'Bg2': 999,
+    'Bg3': 999,
+    'Bg4': 999,
+    'Player1': 300,
+    'Enemy2': 1,
+    'Prize1': 1,
+    'Prize2': 1,
+}
+
+EVENT_TIME = pygame.USEREVENT + 1
 
 
 # M
