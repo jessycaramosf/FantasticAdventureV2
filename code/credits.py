@@ -1,5 +1,5 @@
 import pygame
-from pygame import Surface, Rect
+from pygame import Surface, Rect, K_ESCAPE
 from pygame.font import Font
 
 from code.const import C_ORANGE, WIN_WIDTH, C_WHITE, C_CYAN, C_BLACK, C_PURPLE, C_YELLOW
@@ -35,6 +35,9 @@ class Credits:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        return
 
             pygame.display.flip()
 

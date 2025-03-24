@@ -1,7 +1,7 @@
 import sys
 
 import pygame
-from pygame import Surface, Rect
+from pygame import Surface, Rect, K_ESCAPE
 from pygame.font import Font
 
 from code.const import C_ORANGE, WIN_WIDTH, C_YELLOW, WIN_HEIGHT, SCORE_POS
@@ -30,6 +30,9 @@ class Score:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        return
             pass
 
     def score_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
