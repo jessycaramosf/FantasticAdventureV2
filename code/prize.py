@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from code.const import ENTITY_SPEED, WIN_WIDTH, ENTITY_SCORE
+from code.const import ENTITY_SPEED, WIN_WIDTH
 from code.entity import Entity
 
 

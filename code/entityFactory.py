@@ -8,10 +8,10 @@ import random
 
 from code.prize import Prize
 
-
+# Generate all entities
 class EntityFactory:
     @staticmethod
-    def get_entity(entity_name: str, position=(0,0)):
+    def get_entity(entity_name: str, position=(0, 0)):
         match entity_name:
             case 'Bg0':
                 list_bg = []
@@ -27,4 +27,3 @@ class EntityFactory:
                 return Prize('Prize1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
             case 'Prize2':
                 return Prize('Prize2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
-

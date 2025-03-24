@@ -4,12 +4,11 @@ import sys
 
 import pygame
 
-from code import score
+
 from code.const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
 from code.credits import Credits
 from code.level import Level
 from code.menu import Menu
-from code.player import Player
 from code.score import Score
 
 

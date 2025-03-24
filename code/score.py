@@ -3,7 +3,6 @@ import sys
 import pygame
 from pygame import Surface, Rect, K_ESCAPE
 from pygame.font import Font
-
 from code.const import C_ORANGE, WIN_WIDTH, C_YELLOW, WIN_HEIGHT, SCORE_POS
 
 
@@ -22,7 +21,7 @@ class Score:
         self.window.blit(source=self.surf, dest=self.rect)
         while True:
 
-            self.score_text(60, 'YOU WIN!', C_ORANGE, SCORE_POS['Title'])
+            self.score_text(60, 'YOU WIN!', C_ORANGE, SCORE_POS['Title']) # Print on screen the score in the end of game
             self.score_text(50, f'Score: {player.score}', C_YELLOW, (WIN_WIDTH / 2, WIN_HEIGHT / 2))
             pygame.display.flip()
 

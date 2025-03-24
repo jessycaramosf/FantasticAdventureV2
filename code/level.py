@@ -1,17 +1,15 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import sys
-from random import choice
 
 import pygame
 import random
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code import entityFactory
 from code.EntityMediator import EntityMediator
-from code.const import WIN_HEIGHT, C_YELLOW, C_PURPLE, EVENT_TIME, SPAWN_TIME, C_WHITE, EVENT_TIMEOUT, TIMEOUT_STEP, \
-    TIMEOUT_END, C_ORANGE, WIN_WIDTH
+from code.const import WIN_HEIGHT, C_YELLOW, EVENT_TIME, SPAWN_TIME, C_WHITE, EVENT_TIMEOUT, TIMEOUT_STEP, \
+    TIMEOUT_END
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 from code.player import Player
@@ -54,9 +52,8 @@ class Level:
                     if self.timeout == 0:
                         for ent in self.entity_list:
                             if isinstance(ent, Player):
-                                player_score[0]= ent.score
+                                player_score[0] = ent.score
                         return True
-
 
                 found_player = False
                 for ent in self.entity_list:
